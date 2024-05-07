@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 26779501}
   m_Layer: 0
   m_Name: Spawnear
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1512,7 +1512,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &679026365
 Transform:
@@ -2491,7 +2491,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279034097}
-  - component: {fileID: 1279034098}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -2517,22 +2516,6 @@ Transform:
   m_Father: {fileID: 280123320}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1279034098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279034096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f0760490bb70247a0ff21480c0637a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidas:
-  - {fileID: 252224796}
-  - {fileID: 867705887}
-  - {fileID: 1885949217}
 --- !u!1 &1305995141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,10 +4186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f0760490bb70247a0ff21480c0637a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas:
-  - {fileID: 252224796}
-  - {fileID: 867705887}
-  - {fileID: 1885949217}
+  maxHealth: 3
+  hearts:
+  - {fileID: 252224798}
+  - {fileID: 867705889}
+  - {fileID: 1885949219}
 --- !u!1 &2117853003
 GameObject:
   m_ObjectHideFlags: 0

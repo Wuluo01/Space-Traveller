@@ -1,50 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Vidas : MonoBehaviour
 {
-    private GameObject player;
-    
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-    public static Vidas Instance { get; private set; }
-    public GameObject[] vidas;
-    private int vidasTotales = 3;
+    public int maxHealth = 3;
+    private int currentHealth;
+    public Image[] hearts;
 
-    public void DesactivarVida(int indice)
+    private void Start()
     {
-        vidas[indice].SetActive(false);
+        currentHealth = maxHealth;
     }
 
-    public void ActivarVida(int indice)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        vidas[indice].SetActive(true);
-    }
-    public void PerderVida()
-    {
-        vidasTotales -= 1;
-
-        if (vidasTotales == 0)
+        if (collision.collider.CompareTag("Player"))
         {
-            Destroy(player.gameObject);
+            TakeDamage();
         }
-
-        DesactivarVida(vidasTotales);
     }
 
-    public bool RecuperarVida()
+    private void TakeDamage()
     {
-        if (vidasTotales == 3)
+        if (currentHealth > 0)
         {
-            return false;
-        }
+            currentHealth--;
+            hearts[currentHealth].gameObject.SetActive(false);
 
-        ActivarVida(vidasTotales);
-        vidasTotales += 1;
-        return true;
+            if (currentHealth == 0)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Player"));
+                // Aquí puedes agregar cualquier otro código que desees cuando el jugador pierda todas las vidas
+            }
+        }
     }
+
+
 }

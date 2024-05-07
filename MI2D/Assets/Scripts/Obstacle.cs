@@ -17,11 +17,11 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
+        //else if (collision.gameObject.CompareTag("Player"))
+        //{
             //Vidas.PerderVida();
-            Destroy(player.gameObject);
-        }
+            //Destroy(player.gameObject);
+        //}
     }
    
 }
