@@ -18,8 +18,7 @@ public class ScoreCount : MonoBehaviour
 
         }
         else {
-            scoreCount.SetActive(false);
-           
+            scoreCount.SetActive(false);          
         }
     }
 }

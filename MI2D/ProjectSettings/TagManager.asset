@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bordes
   - Obstacle
+  - Escudo
   layers:
   - Default
   - TransparentFX

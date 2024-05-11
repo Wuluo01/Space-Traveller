@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject dejarSpawnear;
+    public GameObject dejarSpawnearEscudo;
  
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class GameOver : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             dejarSpawnear.SetActive(false);
+            dejarSpawnearEscudo.SetActive(false);
         }
     }
 

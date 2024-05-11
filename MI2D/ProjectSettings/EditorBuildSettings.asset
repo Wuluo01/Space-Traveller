@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Los buenos/Splash.unity
+    guid: 29cbc49a217b0204c9e2d8f449c66497
   - enabled: 1
     path: Assets/Scenes/Los buenos/MenuPrincipal.unity
     guid: 3a70ddee7f93b87498d974f71a3479c5

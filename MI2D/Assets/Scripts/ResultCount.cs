@@ -7,9 +7,7 @@ public class ResultCount : MonoBehaviour
     public Text resultText;
     public Text maxResultText;
     private float result;
-    private int maxResult;
     public GameObject gamePausa;
-
     private bool juegoPausado = false;
 
     // Update is called once per frame
@@ -32,7 +30,7 @@ public class ResultCount : MonoBehaviour
             {
                     PausarJuego();
             }
-        }   
+        }
     }
 
     public void BorrarDatos()
