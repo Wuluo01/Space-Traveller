@@ -7,16 +7,13 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject dejarSpawnear;
-    public GameObject dejarSpawnearEscudo;
- 
-    // Update is called once per frame
+   // Update is called once per frame
     void Update()
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
-            dejarSpawnear.SetActive(false);
-            dejarSpawnearEscudo.SetActive(false);
+            dejarSpawnear.SetActive(false);            
         }
     }
 
@@ -25,9 +22,14 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void OpenMenu()
+    public void OpenMenuMapa1()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
+    public void OpenMenuMapa2()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
     }
 }

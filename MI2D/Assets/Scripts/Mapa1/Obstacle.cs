@@ -20,16 +20,8 @@ public class Obstacle : MonoBehaviour
             Destroy(this.gameObject);
         }
         else if(collision.gameObject.CompareTag("Player"))
-        {
-            if (escudo != null && escudo.activeSelf)
-            {
-                Destroy(this.gameObject);
-                escudo.SetActive(false);
-            }
-            else
-            {
-                Destroy(player.gameObject);
-            }
+        {          
+            Destroy(player.gameObject);
         }     
     }
    

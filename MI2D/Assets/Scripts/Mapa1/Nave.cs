@@ -7,6 +7,9 @@ public class player : MonoBehaviour
     public float playerSpeed;
     public Rigidbody2D rb;
     private Vector2 playerDirection;
+    public float angularSpeed;
+    private float directionY;
+    private float directionX;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +19,8 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float directionY = Input.GetAxisRaw("Vertical");
-        float directionX = Input.GetAxisRaw("Horizontal");
+        directionY = Input.GetAxisRaw("Vertical");
+        directionX = Input.GetAxisRaw("Horizontal");
         playerDirection = new Vector2(directionX, directionY).normalized;
     }
 
