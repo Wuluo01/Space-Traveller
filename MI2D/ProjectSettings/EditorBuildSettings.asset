@@ -25,5 +25,8 @@ EditorBuildSettings:
     guid: b850d81b922b91f418759257b6d8abca
   - enabled: 1
     path: Assets/Scenes/Los buenos/Mapa2.unity
+    guid: 490d1bf5f49e3b94eaec980c6ede9ee2
+  - enabled: 0
+    path: Assets/Scenes/Los buenos/MapaPrueba.unity
     guid: 74ff55fbf92d7054b875619af8d35012
   m_configObjects: {}
