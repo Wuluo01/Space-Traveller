@@ -20,21 +20,19 @@ public class MovPlayer : MonoBehaviour
     void Update()
     {
 
-        // ROTATE the ship.
+       
+       Quaternion rot = transform.rotation;
 
-        // Grab our rotation quaternion
-        Quaternion rot = transform.rotation;
-
-        // Grab the Z euler angle
+      
         float z = rot.eulerAngles.z;
 
-        // Change the Z angle based on input
+   
         z -= Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
 
-        // Recreate the quaternion
+   
         rot = Quaternion.Euler(0, 0, z);
 
-        // Feed the quaternion into our rotation
+       
         transform.rotation = rot;
 
         // MOVE the ship.
@@ -44,7 +42,7 @@ public class MovPlayer : MonoBehaviour
 
         pos += rot * velocity;
 
-        // Finally, update our position!!
+       
         transform.position = pos;
     }
 }
