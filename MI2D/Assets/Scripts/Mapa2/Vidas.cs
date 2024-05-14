@@ -31,7 +31,7 @@ public class Vidas : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D()
     {
         health--;
         if (invulnPeriod > 0)

@@ -4,12 +4,37 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float speed;
+    public GameObject player;  // Referencia al jugador
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Destruir el proyectil después de 5 segundos para limpiar la escena
+        Destroy(gameObject, 5f);
+    }
+
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HealthItem"))
+        {
+            // Recuperar vida del jugador
+            Vidas playerHealth = player.GetComponent<Vidas>();
+            if (playerHealth != null)
+            {
+                playerHealth.health += 1;
+            }
+
+            // Destruir el ítem
+            Destroy(other.gameObject);
+
+            // Destruir el proyectil
+            Destroy(gameObject);
+        }
+        Destroy(gameObject);
     }
 }

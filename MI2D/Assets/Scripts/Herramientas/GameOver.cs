@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    public GameObject dejarSpawnear;
-   // Update is called once per frame
+    public GameObject dejarSpawnearEnemigo;
+    public GameObject dejarSpawnearItem;
+    // Update is called once per frame
     void Update()
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
-            dejarSpawnear.SetActive(false);            
+            dejarSpawnearEnemigo.SetActive(false);
+            dejarSpawnearItem.SetActive(false);
         }
     }
 

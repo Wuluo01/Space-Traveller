@@ -8,7 +8,7 @@ public class SpawnEnemigo : MonoBehaviour
 
     float spawnDistance = 12f;
 
-    float enemyRate = 5;
+    public float enemyRate = 5;
     float nextEnemy = 1;
 
     // Update is called once per frame

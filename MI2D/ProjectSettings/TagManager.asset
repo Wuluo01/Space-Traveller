@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Escudo
   - Bullet
+  - HealthItem
   layers:
   - Default
   - TransparentFX

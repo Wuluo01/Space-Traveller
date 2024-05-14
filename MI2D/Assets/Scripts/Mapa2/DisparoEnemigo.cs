@@ -11,6 +11,7 @@ public class DisparoEnemigo : MonoBehaviour
 
     public float fireDelay = 0.25f;
     float cooldownTimer = 0;
+    Transform player;
 
     void Start()
     {
@@ -20,6 +21,16 @@ public class DisparoEnemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+           
+            GameObject go = GameObject.FindWithTag("Player");
+
+            if (go != null)
+            {
+                player = go.transform;
+            }
+        }
         cooldownTimer -= Time.deltaTime;
 
         if ( cooldownTimer <= 0)

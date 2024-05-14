@@ -28,7 +28,6 @@ public class Asteroids : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collision)
     {
-        escudo = GameObject.FindGameObjectWithTag("Escudo");
         if (isDestroying) {
             return;
         }
@@ -45,12 +44,6 @@ public class Asteroids : MonoBehaviour
                     Quaternion.identity
                 ) ;
             }
-        }
-        if (collision.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject);
-          
-        }
-     
+        }    
     }
 }
