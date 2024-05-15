@@ -9,6 +9,11 @@ TagManager:
   - Escudo
   - Bullet
   - HealthItem
+  - Enemy
+  - BulletEnemy
+  - Bomb
+  - BulletSpeed
+  - Rayo
   layers:
   - Default
   - TransparentFX

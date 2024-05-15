@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Los buenos/MenuPrincipal.unity
     guid: 3a70ddee7f93b87498d974f71a3479c5
   - enabled: 1
-    path: Assets/Scenes/Los buenos/Mapas.unity
-    guid: 354d6d2ea88243f47a8eded2fc2e1f0d
+    path: Assets/Scenes/Los buenos/Guide.unity
+    guid: 2947b08ae012e7c4c96a954eca234368
   - enabled: 1
     path: Assets/Scenes/Los buenos/Settings.unity
     guid: 1bd937d935bf05443924dfeb31d58abf
@@ -21,12 +21,21 @@ EditorBuildSettings:
     path: "Assets/Scenes/Los buenos/Cr\xE9ditos.unity"
     guid: 7ba14b1a3bb1f07448ba46a5ab9241ea
   - enabled: 1
+    path: Assets/Scenes/Los buenos/HowToPlay.unity
+    guid: e7ee4596b23b3f4478fabd39803140f0
+  - enabled: 1
+    path: Assets/Scenes/Los buenos/Enemies.unity
+    guid: f8ba99304d31b1d419817c371329e0ad
+  - enabled: 1
+    path: Assets/Scenes/Los buenos/Items.unity
+    guid: 7cbdaabb8ceef604aadf0e2f6adc1091
+  - enabled: 1
+    path: Assets/Scenes/Los buenos/Mapas.unity
+    guid: 354d6d2ea88243f47a8eded2fc2e1f0d
+  - enabled: 1
     path: Assets/Scenes/Los buenos/Mapa1.unity
     guid: 74ff55fbf92d7054b875619af8d35012
   - enabled: 1
     path: Assets/Scenes/Los buenos/Mapa2.unity
     guid: 490d1bf5f49e3b94eaec980c6ede9ee2
-  - enabled: 0
-    path: Assets/Scenes/Los buenos/Basura.unity
-    guid: b850d81b922b91f418759257b6d8abca
   m_configObjects: {}

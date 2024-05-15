@@ -145,6 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  player: {fileID: 0}
+  newBulletPrefab: {fileID: 8994918183940882344, guid: d4aefd7b91ceefd41ade01776f28fc55, type: 3}
+  duration: 5
 --- !u!114 &4587847358169324940
 MonoBehaviour:
   m_ObjectHideFlags: 0

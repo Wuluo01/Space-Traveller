@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129693457}
-  - component: {fileID: 129693456}
   - component: {fileID: 129693458}
   m_Layer: 0
   m_Name: GameManager
@@ -141,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &129693456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129693454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7d11148237b364bb6e4d6f9a533cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &129693457
 Transform:
   m_ObjectHideFlags: 0
@@ -335,9 +322,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129693456}
-        m_TargetAssemblyTypeName: Start, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 129693458}
+        m_TargetAssemblyTypeName: Splash, Assembly-CSharp
+        m_MethodName: MenuPrincipal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

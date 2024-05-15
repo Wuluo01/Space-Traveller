@@ -27,11 +27,11 @@ public class GameOver : MonoBehaviour
     public void OpenMenuMapa1()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
     public void OpenMenuMapa2()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }

@@ -846,9 +846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366228180}
-        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
-        m_MethodName: VolverAMenu
+      - m_Target: {fileID: 1366228182}
+        m_TargetAssemblyTypeName: Backs, Assembly-CSharp
+        m_MethodName: SettingsAMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1137,8 +1137,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366228179}
-  - component: {fileID: 1366228180}
   - component: {fileID: 1366228181}
+  - component: {fileID: 1366228182}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1162,20 +1162,8 @@ Transform:
   - {fileID: 1649731873}
   - {fileID: 479176767}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1366228180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366228177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a98aef7bc968d48be5de11427cd9c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1366228181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1180,18 @@ MonoBehaviour:
   sliderValue: 0
   imagenMute: {fileID: 1197186688}
   imagenSonido: {fileID: 1453867656}
+--- !u!114 &1366228182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366228177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b686d1986fe944980f49a453f6be15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375520621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453867655
 GameObject:

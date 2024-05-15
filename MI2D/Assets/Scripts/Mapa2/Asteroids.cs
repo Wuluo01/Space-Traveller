@@ -9,7 +9,6 @@ public class Asteroids : MonoBehaviour
     public GameObject[] subAsteroids;
     public int numberOfAsteroids;
     private bool isDestroying;
-    private GameObject escudo;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +43,19 @@ public class Asteroids : MonoBehaviour
                     Quaternion.identity
                 ) ;
             }
-        }    
+        }
+        if (collision.CompareTag("Player"))
+        {
+            isDestroying = true;
+            Destroy(this.gameObject);
+            for (var i = 0; i < numberOfAsteroids; i++)
+            {
+                Instantiate(
+                    subAsteroids[Random.Range(0, subAsteroids.Length)],
+                    transform.position,
+                    Quaternion.identity
+                );
+            }
+        }
     }
 }

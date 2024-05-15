@@ -368,7 +368,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364597686
 GameObject:
@@ -563,7 +563,7 @@ Transform:
   - {fileID: 47975651}
   - {fileID: 1566253059}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &478136945
 MonoBehaviour:
@@ -865,8 +865,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 478136945}
-        m_TargetAssemblyTypeName: Creditos, Assembly-CSharp
-        m_MethodName: VolverAMenu
+        m_TargetAssemblyTypeName: Backs, Assembly-CSharp
+        m_MethodName: CreditosAMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

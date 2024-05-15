@@ -12,9 +12,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletEnemigo Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1698508755449011510, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
+      propertyPath: m_TagString
+      value: BulletEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2336732769418017875, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
       propertyPath: speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336732769418017875, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319363259034043779, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -80,8 +88,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2336732769418017875, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1698508755449011510, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7541395325364553890}
   m_SourcePrefab: {fileID: 100100000, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
+--- !u!1 &1429561235597074681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1698508755449011510, guid: 936a1ea72a9949e4bbdf758485346164, type: 3}
+  m_PrefabInstance: {fileID: 307514609257119183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7541395325364553890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429561235597074681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff7c872f76215f429549df8a864a9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4

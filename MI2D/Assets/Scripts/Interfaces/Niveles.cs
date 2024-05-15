@@ -7,18 +7,12 @@ public class Niveles : MonoBehaviour
 {
     public void StartMap1()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
     public void StartMap2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
-
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
 
     }
 }

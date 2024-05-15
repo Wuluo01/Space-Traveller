@@ -31,14 +31,40 @@ public class Vidas : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        health--;
-        if (invulnPeriod > 0)
+        if (other.gameObject.CompareTag("BulletEnemy") || other.gameObject.CompareTag("Enemy"))
         {
-            invulnTimer = invulnPeriod;
-            gameObject.layer = 10;
+            health--;
+            if (invulnPeriod > 0)
+            {
+                invulnTimer = invulnPeriod;
+                gameObject.layer = 10;
+            }
         }
+        else if (other.gameObject.CompareTag("HealthItem"))
+        {
+            // Recuperar vida del jugador
+            health += 1;
+
+            // Destruir el ítem
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Bomb"))
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletEnemy");
+            foreach (GameObject bullet in bullets)
+            {
+                Destroy(bullet);
+            }
+            Destroy(other.gameObject);
+            
+        }       
     }
 
     void Update()

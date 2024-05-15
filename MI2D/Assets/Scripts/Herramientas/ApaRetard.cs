@@ -5,6 +5,7 @@ using UnityEngine;
 public class ApaRetard : MonoBehaviour
 {
     public GameObject objeto;
+    public float seconds;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class ApaRetard : MonoBehaviour
     IEnumerator ActivarDespuesDeEspera()
     {
         // Esperar 3 segundos
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(seconds);
 
         // Activar el gameobject
         objeto.SetActive(true);

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public GameObject player;  // Referencia al jugador
 
+
     void Start()
     {
         // Destruir el proyectil después de 5 segundos para limpiar la escena
@@ -35,6 +36,21 @@ public class Bullet : MonoBehaviour
             // Destruir el proyectil
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Bomb"))
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("BulletEnemy");
+            foreach (GameObject bullet in bullets)
+            {
+                Destroy(bullet);
+            }
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
         Destroy(gameObject);
-    }
+    }    
 }

@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 6058272556807494522}
   - component: {fileID: 7647478675644088906}
   - component: {fileID: 6091058313576383172}
-  - component: {fileID: 4386532115702577751}
   - component: {fileID: 5116514916957050060}
+  - component: {fileID: -3290665810505561566}
   m_Layer: 0
   m_Name: Enemigo2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2534277600268535221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.85, y: 1.5, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d61ca62408e35f74d99824443e30e47b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a32a1f408dcca0f449823525bd31bc89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,14 +147,14 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.9, y: 8.9}
+    oldSize: {x: 3.7, y: 3.7}
     newSize: {x: 8.9, y: 8.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -410,23 +410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee7adf8fc712524e93a7f6b5217b343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletOffset: {x: 0, y: 0.5, z: 0}
-  bulletPrefab: {fileID: 1429561235597074681, guid: 926d27ef5bcd40e4eb9dab275171fc5c, type: 3}
-  fireDelay: 2
---- !u!114 &4386532115702577751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2534277600268535221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f420630a7774cb249bbf83f347cca5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  invulnPeriod: 0.2
+  bulletOffset: {x: 0, y: 1.5, z: 0}
+  bulletPrefab: {fileID: 2009586183804996536, guid: 4b315d1098cb7534ba1069d768ab9dbd, type: 3}
+  fireDelay: 1.5
 --- !u!114 &5116514916957050060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,3 +430,17 @@ MonoBehaviour:
     infBorder: -5.35
     izqBorder: -8.35
     derBorder: 8.35
+--- !u!114 &-3290665810505561566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534277600268535221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ef03b1793a04d428f8d8af46e468a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  invulnPeriod: 0.1

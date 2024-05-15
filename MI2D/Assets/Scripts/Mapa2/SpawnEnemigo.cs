@@ -6,10 +6,19 @@ public class SpawnEnemigo : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
-    float spawnDistance = 12f;
+    public float initialSpawnDistance = 12f;
+    public float initialEnemyRate = 5f;  // Tiempo inicial entre spawns
+    public float minEnemyRate = 2f;      // Tiempo mínimo entre spawns
+    public float decreaseRate = 0.9f;    // Factor de disminución del tiempo entre spawns
 
-    public float enemyRate = 5;
-    float nextEnemy = 1;
+    private float nextEnemy;
+    private float currentEnemyRate;
+
+    void Start()
+    {
+        nextEnemy = initialEnemyRate;
+        currentEnemyRate = initialEnemyRate;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,18 +27,17 @@ public class SpawnEnemigo : MonoBehaviour
 
         if (nextEnemy <= 0)
         {
-            nextEnemy = enemyRate;
-            enemyRate *= 0.9f;
-            if (enemyRate < 2)
-                enemyRate = 2;
+            nextEnemy = currentEnemyRate;
 
             Vector3 offset = Random.onUnitSphere;
-
             offset.z = 0;
-
-            offset = offset.normalized * spawnDistance;
+            offset = offset.normalized * initialSpawnDistance;
 
             Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
+
+            // Disminuir el tiempo entre spawns
+            currentEnemyRate *= decreaseRate;
+            currentEnemyRate = Mathf.Max(currentEnemyRate, minEnemyRate);
         }
     }
 }

@@ -4,33 +4,19 @@ using UnityEngine;
 
 public class SpawnItem : MonoBehaviour
 {
-    public GameObject itemPrefab;
+    public float timeToSpawn;
+    public GameObject[] prefabs;
+    public Transform[] spawners;
+    // Start is called before the first frame update
+    IEnumerator Start()
 
-    float spawnDistance = 12f;
-
-    float ItemRate = 8;
-    float nextItem = 1;
-
-    // Update is called once per frame
-    void Update()
     {
-        nextItem -= Time.deltaTime;
-
-        if (nextItem <= 0)
+        while (true)
         {
-            nextItem = ItemRate;
-            ItemRate *= 0.95f;
-            if (ItemRate < 2)
-                ItemRate = 2;
-
-            Vector3 offset = Random.onUnitSphere;
-
-            offset.z = 0;
-
-            offset = offset.normalized * spawnDistance;
-
-            Instantiate(itemPrefab, transform.position + offset, Quaternion.identity);
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)],
+                spawners[Random.Range(0, prefabs.Length)].position,
+                Quaternion.identity);
+            yield return new WaitForSeconds(timeToSpawn);
         }
     }
-
 }
