@@ -10,32 +10,47 @@ public class ResultCount : MonoBehaviour
     public GameObject gamePausa;
     private bool juegoPausado = false;
 
-    // Update is called once per frame
+    // Nombre único para identificar el mapa
+    public string mapName;
+
     void Start()
     {
-        maxResultText.text = PlayerPrefs.GetInt("PuntuacionRecord", 0).ToString();
+        // Cargar la puntuación máxima específica del mapa
+        maxResultText.text = PlayerPrefs.GetInt(mapName + "PuntuacionRecord", 0).ToString();
     }
+
     void Update()
     {
         if (!juegoPausado && GameObject.FindGameObjectWithTag("Player") != null)
         {
             result += 100 * Time.deltaTime;
             resultText.text = ((int)result).ToString();
-            if (result > PlayerPrefs.GetInt("PuntuacionRecord",0))
+
+            // Actualizar la puntuación máxima si se supera
+            if (result > PlayerPrefs.GetInt(mapName + "PuntuacionRecord", 0))
             {
-                PlayerPrefs.SetInt("PuntuacionRecord", (int)result);
+                PlayerPrefs.SetInt(mapName + "PuntuacionRecord", (int)result);
                 maxResultText.text = result.ToString();
             }
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if (juegoPausado)
+                {
+                    ReanudarJuego();
+                }
+                else
+                {
                     PausarJuego();
+                }
             }
         }
     }
 
     public void BorrarDatos()
     {
-        PlayerPrefs.DeleteKey("PuntuacionRecord");
+        // Borrar la puntuación máxima específica del mapa
+        PlayerPrefs.DeleteKey(mapName + "PuntuacionRecord");
         maxResultText.text = "0";
     }
 
@@ -43,12 +58,13 @@ public class ResultCount : MonoBehaviour
     {
         Time.timeScale = 0f; // Congelar el tiempo del juego
         gamePausa.SetActive(true);
+        juegoPausado = true;
     }
 
     public void ReanudarJuego()
     {
-        Time.timeScale = 1f;
-        gamePausa.SetActive(false);// Reanudar el tiempo del juego
+        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        gamePausa.SetActive(false);
+        juegoPausado = false;
     }
-
 }

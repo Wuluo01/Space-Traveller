@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public GameObject player;  // Referencia al jugador
-
+    public GameObject HyperExplosion;
 
     void Start()
     {
@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Bomb"))
         {
+            Instantiate(HyperExplosion, other.transform.position, other.transform.rotation);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {

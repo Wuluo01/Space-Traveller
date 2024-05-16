@@ -7,7 +7,8 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject dejarSpawnearEnemigo;
-    public GameObject dejarSpawnearItem;
+    public GameObject dejarSpawnearVidas;
+    public GameObject dejarSpawnearBombas;
     // Update is called once per frame
     void Update()
     {
@@ -15,23 +16,42 @@ public class GameOver : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             dejarSpawnearEnemigo.SetActive(false);
-            dejarSpawnearItem.SetActive(false);
+            dejarSpawnearVidas.SetActive(false);
+            dejarSpawnearBombas.SetActive(false);
         }
     }
 
     public void Restart()
     {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.RestartMusic();
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void OpenMenuMapa1()
+    public void Map1ToMapas()
     {
+        // Cambia la música antes de cargar la escena del menú
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayMusic(AudioManager.instance.splashToMapsMusic);
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
     }
-    public void OpenMenuMapa2()
+    public void Map2ToMapas()
     {
+        // Cambia la música antes de cargar la escena del menú
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayMusic(AudioManager.instance.splashToMapsMusic);
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+
     }
 }

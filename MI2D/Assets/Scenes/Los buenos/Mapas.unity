@@ -915,6 +915,7 @@ GameObject:
   - component: {fileID: 1551603994}
   - component: {fileID: 1551603993}
   - component: {fileID: 1551603992}
+  - component: {fileID: 1551603995}
   m_Layer: 5
   m_Name: Map2
   m_TagString: Untagged
@@ -987,16 +988,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385085937}
-        m_TargetAssemblyTypeName: Niveles, Assembly-CSharp
-        m_MethodName: StartMap2
-        m_Mode: 1
+      - m_Target: {fileID: 1551603995}
+        m_TargetAssemblyTypeName: MapMusic, Assembly-CSharp
+        m_MethodName: SelectMap2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Mapa2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1551603993
@@ -1037,6 +1038,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551603990}
   m_CullTransparentMesh: 1
+--- !u!114 &1551603995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551603990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd58dc7dc1236114f9115d6eeed6e4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700030232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1062,7 @@ GameObject:
   - component: {fileID: 1700030236}
   - component: {fileID: 1700030235}
   - component: {fileID: 1700030234}
+  - component: {fileID: 1700030237}
   m_Layer: 5
   m_Name: Map1
   m_TagString: Untagged
@@ -1121,16 +1135,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385085937}
-        m_TargetAssemblyTypeName: Niveles, Assembly-CSharp
-        m_MethodName: StartMap1
-        m_Mode: 1
+      - m_Target: {fileID: 1700030237}
+        m_TargetAssemblyTypeName: MapMusic, Assembly-CSharp
+        m_MethodName: SelectMap1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Mapa1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1700030235
@@ -1171,6 +1185,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700030232}
   m_CullTransparentMesh: 1
+--- !u!114 &1700030237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700030232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd58dc7dc1236114f9115d6eeed6e4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1980428104
 GameObject:
   m_ObjectHideFlags: 0

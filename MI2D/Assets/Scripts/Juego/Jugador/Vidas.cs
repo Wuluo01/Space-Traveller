@@ -5,7 +5,8 @@ using UnityEngine;
 public class Vidas : MonoBehaviour
 {
     public int health = 1;
-
+    public GameObject Explosion;
+    public GameObject HyperExplosion;
     public float invulnPeriod = 0;
     float invulnTimer = 0;
     int correctLayer;
@@ -52,6 +53,7 @@ public class Vidas : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Bomb"))
         {
+            Instantiate(HyperExplosion, other.transform.position, other.transform.rotation);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
@@ -63,7 +65,6 @@ public class Vidas : MonoBehaviour
                 Destroy(bullet);
             }
             Destroy(other.gameObject);
-            
         }       
     }
 
@@ -99,6 +100,12 @@ public class Vidas : MonoBehaviour
 
     void Die()
     {
+        PlayExplosion();
         Destroy(gameObject);
+    }
+    void PlayExplosion()
+    {
+        GameObject explosion = (GameObject)Instantiate(Explosion);
+        explosion.transform.position = transform.position;
     }
 }

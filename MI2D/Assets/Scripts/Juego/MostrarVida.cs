@@ -22,6 +22,6 @@ public class MostrarVida : MonoBehaviour
 
     void UpdateHealthText()
     {
-        healthText.text = "Health: " + playerVidas.health.ToString();
+        healthText.text = playerVidas.health.ToString();
     }
 }

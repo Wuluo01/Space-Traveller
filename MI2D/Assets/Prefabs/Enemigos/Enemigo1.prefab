@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee7adf8fc712524e93a7f6b5217b343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletOffset: {x: 0, y: 0.5, z: 0}
+  bulletOffset: {x: 0, y: 0.8, z: 0}
   bulletPrefab: {fileID: 1429561235597074681, guid: 926d27ef5bcd40e4eb9dab275171fc5c, type: 3}
   fireDelay: 2
 --- !u!114 &1200687930059008017
@@ -402,4 +402,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  Explosion: {fileID: 3859444250347047999, guid: 1d5092a0cddf43141bfba6326590c96a, type: 3}
   invulnPeriod: 0.1

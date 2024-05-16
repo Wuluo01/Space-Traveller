@@ -5,44 +5,102 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    float linToLog(float linear)
+    public static AudioManager instance;
+
+    public AudioClip splashToMapsMusic;
+    public AudioClip Map1Music;
+    public AudioClip Map2Music;
+    private float pausedTime;
+    private AudioSource audioSource;
+
+    private const string MusicVolumeKey = "MusicVolume";
+    private const string EffectsVolumeKey = "EffectsVolume";
+    private List<AudioSource> allAudioSources = new List<AudioSource>();
+
+    void Awake()
     {
-        return Mathf.Log10(linear) * 20f;
-    }
-    float logToLin(float logarithmic)
-    {
-        return Mathf.Pow(10f, logarithmic / 20f);
-    }
-    [SerializeField] private AudioMixer mixer;
-    private const string MASTER_VOLUME_PARAM = "MasterVolume";
-    private const string MUSIC_VOLUME_PARAM = "MusicVolume";
-    private const string SFX_VOLUME_PARAM = "SFXVolume";
-    public float GetMasterVolume()
-    {
-        mixer.GetFloat(MASTER_VOLUME_PARAM, out float vol);
-        return logToLin(vol);
-    }
-    public void SetMasterVolume(float volume)
-    {
-        mixer.SetFloat(MASTER_VOLUME_PARAM, linToLog(volume));
-    }
-    public float GetMusicVolume()
-    {
-        mixer.GetFloat(MUSIC_VOLUME_PARAM, out float vol);
-        return logToLin(vol);
-    }
-    public void SetMusicVolume(float volume)
-    {
-        mixer.SetFloat(MUSIC_VOLUME_PARAM, linToLog(volume));
-    }
-    public float GetSFXVolume()
-    {
-        mixer.GetFloat(SFX_VOLUME_PARAM, out float vol);
-        return logToLin(vol);
-    }
-    public void SetSFXVolume(float volume)
-    {
-        mixer.SetFloat(SFX_VOLUME_PARAM, linToLog(volume));
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            audioSource = GetComponent<AudioSource>();
+            LoadVolumes();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
+    void Start()
+    {
+        PlayMusic(splashToMapsMusic);
+    }
+
+    public void PlayMusic(AudioClip music)
+    {
+        if (audioSource.clip == music)
+            return;
+
+        audioSource.clip = music;
+        audioSource.Play();
+    }
+
+    public void RestartMusic()
+    {
+        audioSource.Stop();
+        audioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioSource.volume = volume;
+        PlayerPrefs.SetFloat(MusicVolumeKey, volume);
+        PlayerPrefs.Save();
+    }
+
+    public void SetEffectsVolume(float volume)
+    {
+        PlayerPrefs.SetFloat(EffectsVolumeKey, volume);
+        PlayerPrefs.Save();
+        UpdateAllAudioSources(volume);
+    }
+
+    private void LoadVolumes()
+    {
+        float musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
+        audioSource.volume = musicVolume;
+
+        float effectsVolume = PlayerPrefs.GetFloat(EffectsVolumeKey, 0.5f);
+        UpdateAllAudioSources(effectsVolume);
+    }
+
+    public void RegisterAudioSource(AudioSource source)
+    {
+        if (!allAudioSources.Contains(source))
+        {
+            allAudioSources.Add(source);
+            float effectsVolume = PlayerPrefs.GetFloat(EffectsVolumeKey, 0.5f);
+            source.volume = effectsVolume; // Set the initial volume
+        }
+    }
+
+    private void UpdateAllAudioSources(float volume)
+    {
+        // Eliminar referencias nulas antes de actualizar el volumen
+        allAudioSources.RemoveAll(source => source == null);
+
+        foreach (AudioSource source in allAudioSources)
+        {
+            if (source != null)
+            {
+                source.volume = volume;
+            }
+        }
+    }
 }

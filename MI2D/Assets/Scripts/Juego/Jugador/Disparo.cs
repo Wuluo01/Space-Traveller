@@ -24,7 +24,7 @@ public class Disparo : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && cooldownTimer <= 0)
         {
-            // SHOOT!
+            // SHOOT!          
             cooldownTimer = fireDelay;
 
             Vector3 offset = transform.rotation * bulletOffset;

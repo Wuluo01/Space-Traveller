@@ -5,6 +5,7 @@ using UnityEngine;
 public class VidasEnemigo : MonoBehaviour
 {
     public int health = 1;
+    public GameObject Explosion;
 
     public float invulnPeriod = 0;
     float invulnTimer = 0;
@@ -77,7 +78,12 @@ public class VidasEnemigo : MonoBehaviour
 
     void Die()
     {
+        PlayExplosion();
         Destroy(gameObject);
     }
-
+    void PlayExplosion()
+    {
+        GameObject explosion = (GameObject)Instantiate(Explosion);
+        explosion.transform.position = transform.position;
+    }
 }
