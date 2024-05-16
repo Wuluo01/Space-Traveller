@@ -443,8 +443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4354996856180622252, guid: f9ea9e1e1bcdc3a4ba6357b841a63e98, type: 3}
   initialSpawnDistance: 15
-  initialEnemyRate: 25
-  minEnemyRate: 8
+  initialEnemyRate: 30
+  minEnemyRate: 10
   decreaseRate: 0.95
 --- !u!4 &268483991
 Transform:
@@ -929,7 +929,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2534277600268535221, guid: 403cb53e3174e9c4e9ac78649439c7ef, type: 3}
   initialSpawnDistance: 12
   initialEnemyRate: 15
-  minEnemyRate: 3.5
+  minEnemyRate: 6
   decreaseRate: 0.95
 --- !u!4 &441478602
 Transform:
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51edaac85a375d641b0710e017a1a41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSpawn: 20
+  timeToSpawn: 30
   prefabs:
   - {fileID: 6664841587194552911, guid: e88333081dac9354e92dd5c19ffe3a3b, type: 3}
   spawners:
@@ -2404,7 +2404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51edaac85a375d641b0710e017a1a41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSpawn: 10
+  timeToSpawn: 15
   prefabs:
   - {fileID: 4955999399836232475, guid: ef5af984523eed747ae6ff2694da0b89, type: 3}
   spawners:
@@ -2807,7 +2807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objeto: {fileID: 480970375}
-  seconds: 20
+  seconds: 30
 --- !u!114 &1679073689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,7 +2821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objeto: {fileID: 1244458905}
-  seconds: 10
+  seconds: 15
 --- !u!1 &1707846789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7545050125377421914, guid: 492644841a177424abeddce144df2423, type: 3}
   initialSpawnDistance: 12
   initialEnemyRate: 5
-  minEnemyRate: 1.5
+  minEnemyRate: 2.5
   decreaseRate: 0.95
 --- !u!4 &1777154563
 Transform:
