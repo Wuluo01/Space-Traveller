@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Vidas : MonoBehaviour
+public class Vidas : MonoBehaviour//para todas las interacciones con la vida del jugador
 {
     public int health = 1;
     public GameObject Explosion;
@@ -10,29 +9,21 @@ public class Vidas : MonoBehaviour
     public float invulnPeriod = 0;
     float invulnTimer = 0;
     int correctLayer;
-
     SpriteRenderer spriteRend;
-
     void Start()
     {
         correctLayer = gameObject.layer;
-
-        // NOTE!  This only get the renderer on the parent object.
-        // In other words, it doesn't work for children. I.E. "enemy01"
         spriteRend = GetComponent<SpriteRenderer>();
-
         if (spriteRend == null)
         {
             spriteRend = transform.GetComponentInChildren<SpriteRenderer>();
-
             if (spriteRend == null)
             {
                 Debug.LogError("Object '" + gameObject.name + "' has no sprite renderer.");
             }
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)//gestión de choque con enemigos, balas,items
     {
         if (other.gameObject.CompareTag("BulletEnemy") || other.gameObject.CompareTag("Enemy"))
         {
@@ -45,10 +36,7 @@ public class Vidas : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("HealthItem"))
         {
-            // Recuperar vida del jugador
             health += 1;
-
-            // Destruir el ítem
             Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Bomb"))
@@ -67,14 +55,11 @@ public class Vidas : MonoBehaviour
             Destroy(other.gameObject);
         }       
     }
-
-    void Update()
+    void Update()//gestión de la vida
     {
-
         if (invulnTimer > 0)
         {
             invulnTimer -= Time.deltaTime;
-
             if (invulnTimer <= 0)
             {
                 gameObject.layer = correctLayer;
@@ -91,19 +76,17 @@ public class Vidas : MonoBehaviour
                 }
             }
         }
-
         if (health <= 0)
         {
             Die();
         }
     }
-
-    void Die()
+    void Die()//muere
     {
         PlayExplosion();
         Destroy(gameObject);
     }
-    void PlayExplosion()
+    void PlayExplosion()//explota
     {
         GameObject explosion = (GameObject)Instantiate(Explosion);
         explosion.transform.position = transform.position;

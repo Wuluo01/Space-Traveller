@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Asteroids : MonoBehaviour
+public class Asteroids : MonoBehaviour//para gestionar comportamiento de los asteroides
 {
     private Rigidbody2D rb;
     public float speed;
     public GameObject[] subAsteroids;
     public int numberOfAsteroids;
     private bool isDestroying;
-
-    // Start is called before the first frame update
     void Start()
-    {
-        
+    {       
         rb = GetComponent<Rigidbody2D>();
         rb.drag = 0;
         rb.angularDrag = 0;
@@ -24,8 +20,7 @@ public class Asteroids : MonoBehaviour
             .normalized * speed;
         rb.angularVelocity = Random.Range(-50f, 50f);
     }
-
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnTriggerEnter2D (Collider2D collision)//todo lo de colisiones
     {
         if (isDestroying) {
             return;

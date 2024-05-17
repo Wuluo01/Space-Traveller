@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cameram : MonoBehaviour
+public class Cameram : MonoBehaviour//para la cámara
 {
     private Vector3 objetivo;
     [SerializeField] private Camera camara;
-    // Start is called before the first frame update
-    
-    
-
-    // Update is called once per frame
     void Update()
     {
         objetivo = camara.ScreenToWorldPoint(Input.mousePosition);

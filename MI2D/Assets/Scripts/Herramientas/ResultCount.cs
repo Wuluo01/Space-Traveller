@@ -2,37 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ResultCount : MonoBehaviour
+public class ResultCount : MonoBehaviour//para las puntuaciones
 {
     public Text resultText;
     public Text maxResultText;
     private float result;
     public GameObject gamePausa;
     private bool juegoPausado = false;
-
-    // Nombre único para identificar el mapa
     public string mapName;
-
-    void Start()
+    void Start()//carga puntuación máxima
     {
-        // Cargar la puntuación máxima específica del mapa
         maxResultText.text = PlayerPrefs.GetInt(mapName + "PuntuacionRecord", 0).ToString();
     }
-
-    void Update()
+    void Update()//actualiza la puntuación máxima si se supera y pausar juego
     {
         if (!juegoPausado && GameObject.FindGameObjectWithTag("Player") != null)
         {
             result += 100 * Time.deltaTime;
             resultText.text = ((int)result).ToString();
-
-            // Actualizar la puntuación máxima si se supera
             if (result > PlayerPrefs.GetInt(mapName + "PuntuacionRecord", 0))
             {
                 PlayerPrefs.SetInt(mapName + "PuntuacionRecord", (int)result);
                 maxResultText.text = result.ToString();
             }
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (juegoPausado)
@@ -46,24 +38,20 @@ public class ResultCount : MonoBehaviour
             }
         }
     }
-
-    public void BorrarDatos()
+    public void BorrarDatos()//borra la puntuación máxima de ese mapa
     {
-        // Borrar la puntuación máxima específica del mapa
         PlayerPrefs.DeleteKey(mapName + "PuntuacionRecord");
         maxResultText.text = "0";
     }
-
-    void PausarJuego()
+    void PausarJuego()//pausa
     {
-        Time.timeScale = 0f; // Congelar el tiempo del juego
+        Time.timeScale = 0f; 
         gamePausa.SetActive(true);
         juegoPausado = true;
     }
-
-    public void ReanudarJuego()
+    public void ReanudarJuego()//reanuda
     {
-        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        Time.timeScale = 1f;
         gamePausa.SetActive(false);
         juegoPausado = false;
     }

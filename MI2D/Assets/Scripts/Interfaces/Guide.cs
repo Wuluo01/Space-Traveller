@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class Guide : MonoBehaviour
+public class Guide : MonoBehaviour//para los botones de la guía
 {
     public void GuideAHowToPlay()
     {
@@ -17,5 +16,4 @@ public class Guide : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
     }
-
 }

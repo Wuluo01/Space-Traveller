@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class Backs : MonoBehaviour
+public class Backs : MonoBehaviour//para los botones
 {
     public void GuideAMenu()
     {

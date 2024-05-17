@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SpawnItem : MonoBehaviour
+public class SpawnItem : MonoBehaviour//para spawnear items
 {
     public float timeToSpawn;
     public GameObject[] prefabs;
     public Transform[] spawners;
-    // Start is called before the first frame update
     IEnumerator Start()
-
     {
         while (true)
         {

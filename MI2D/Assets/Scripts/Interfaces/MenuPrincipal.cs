@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class MenuPrincipal : MonoBehaviour
+public class MenuPrincipal : MonoBehaviour//para los botones del menú principal
 {
     public void Guide()
     {
@@ -23,7 +22,6 @@ public class MenuPrincipal : MonoBehaviour
     }
     public void ExitGame()
     {
-        Debug.Log("Saliendo...");
         Application.Quit();
     }
 }

@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class Splash : MonoBehaviour
+public class Splash : MonoBehaviour//para el botón de splash y que vaya al menú principal después de 8 segundos si no se toca nada
 {
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ActivarDespuesDeEspera());
     }
-
     IEnumerator ActivarDespuesDeEspera()
     {
-        // Esperar 3 segundos
         yield return new WaitForSeconds(8f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 

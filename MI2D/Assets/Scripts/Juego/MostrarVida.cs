@@ -2,24 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class MostrarVida : MonoBehaviour
+public class MostrarVida : MonoBehaviour//para mostrar la vida
 {
-    public Text healthText; // Referencia al componente de texto del UI
-    public Vidas playerVidas; // Referencia al script Vidas del jugador
-
+    public Text healthText; 
+    public Vidas playerVidas; 
     void Start()
     {
-
         UpdateHealthText();
     }
-
     void Update()
     {
-        // Actualizar la UI cada frame
         UpdateHealthText();
     }
-
     void UpdateHealthText()
     {
         healthText.text = playerVidas.health.ToString();

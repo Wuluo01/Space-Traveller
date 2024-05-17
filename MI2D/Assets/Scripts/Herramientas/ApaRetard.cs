@@ -2,23 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ApaRetard : MonoBehaviour
+public class ApaRetard : MonoBehaviour//para que salgan más tarde
 {
     public GameObject objeto;
     public float seconds;
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ActivarDespuesDeEspera());
     }
-
-    // Update is called once per frame
-    IEnumerator ActivarDespuesDeEspera()
+    IEnumerator ActivarDespuesDeEspera()//Para esperar
     {
-        // Esperar 3 segundos
         yield return new WaitForSeconds(seconds);
 
-        // Activar el gameobject
         objeto.SetActive(true);
     }
  }
