@@ -442,6 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ef03b1793a04d428f8d8af46e468a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   Explosion: {fileID: 1974317463927374117, guid: 12d09511beebb47489d0ffeeb052caec, type: 3}
   invulnPeriod: 0.1

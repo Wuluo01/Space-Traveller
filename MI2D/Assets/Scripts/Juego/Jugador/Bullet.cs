@@ -5,12 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-    public GameObject player;  // Referencia al jugador
+    public GameObject player; 
     public GameObject HyperExplosion;
 
     void Start()
     {
-        // Destruir el proyectil después de 5 segundos para limpiar la escena
         Destroy(gameObject, 3f);
     }
 
@@ -30,10 +29,24 @@ public class Bullet : MonoBehaviour
                 playerHealth.health += 1;
             }
 
-            // Destruir el ítem
             Destroy(other.gameObject);
 
-            // Destruir el proyectil
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null && audioSource.clip != null)
+            {
+                // Crear un objeto temporal para reproducir el sonido
+                GameObject tempAudio = new GameObject("TempAudio");
+                tempAudio.transform.position = transform.position;
+                AudioSource tempAudioSource = tempAudio.AddComponent<AudioSource>();
+                tempAudioSource.clip = audioSource.clip;
+                tempAudioSource.volume = audioSource.volume;  // Copiar el volumen del AudioSource original
+                tempAudioSource.Play();
+
+                // Destruir el objeto de audio temporal después de que el sonido termine
+                Destroy(tempAudio, audioSource.clip.length);
+            }
+
+            // Destruir el proyectil inmediatamente
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Bomb"))
@@ -50,8 +63,40 @@ public class Bullet : MonoBehaviour
                 Destroy(bullet);
             }
             Destroy(other.gameObject);
+            AudioSource audios = GetComponent<AudioSource>();
+            if (audios != null && audios.clip != null)
+            {
+                // Crear un objeto temporal para reproducir el sonido
+                GameObject tempAudio = new GameObject("TempAudio");
+                tempAudio.transform.position = transform.position;
+                AudioSource tempAudioSource = tempAudio.AddComponent<AudioSource>();
+                tempAudioSource.clip = audios.clip;
+                tempAudioSource.volume = audios.volume;  // Copiar el volumen del AudioSource original
+                tempAudioSource.Play();
+
+                // Destruir el objeto de audio temporal después de que el sonido termine
+                Destroy(tempAudio, audios.clip.length);
+            }
+
+            // Destruir el proyectil inmediatamente
             Destroy(gameObject);
         }
+        AudioSource audio = GetComponent<AudioSource>();
+        if (audio != null && audio.clip != null)
+        {
+            // Crear un objeto temporal para reproducir el sonido
+            GameObject tempAudio = new GameObject("TempAudio");
+            tempAudio.transform.position = transform.position;
+            AudioSource tempAudioSource = tempAudio.AddComponent<AudioSource>();
+            tempAudioSource.clip = audio.clip;
+            tempAudioSource.volume = audio.volume;  // Copiar el volumen del AudioSource original
+            tempAudioSource.Play();
+
+            // Destruir el objeto de audio temporal después de que el sonido termine
+            Destroy(tempAudio, audio.clip.length);
+        }
+
+        // Destruir el proyectil inmediatamente
         Destroy(gameObject);
     }    
 }
